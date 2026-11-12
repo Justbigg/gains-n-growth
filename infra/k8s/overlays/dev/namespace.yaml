@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: atlas-dev
+  labels:
+    app.kubernetes.io/part-of: atlas-commerce
+    app.kubernetes.io/environment: dev

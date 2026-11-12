@@ -1,0 +1,35 @@
+{
+  "name": "atlas-commerce",
+  "private": true,
+  "version": "0.1.0",
+  "packageManager": "pnpm@12.18.0",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "dev": "turbo run dev --parallel",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "dev:api": "pnpm --filter @atlas/api dev",
+    "dev:storefront": "pnpm --filter @atlas/storefront dev",
+    "dev:admin": "pnpm --filter @atlas/admin dev",
+    "db:migrate": "pnpm --filter @atlas/api db:migrate",
+    "db:seed": "pnpm --filter @atlas/api db:seed",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "verify": "pnpm lint && pnpm typecheck && pnpm test && pnpm build"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "eslint": "^10.14.0",
+    "eslint-config-next": "^16.4.5",
+    "prettier": "^3.6.2",
+    "turbo": "^2.11.10",
+    "typescript": "^5.9.3",
+    "vitest": "^5.1.0"
+  }
+}

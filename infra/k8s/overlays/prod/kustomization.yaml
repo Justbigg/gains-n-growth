@@ -1,0 +1,15 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: atlas-prod
+resources:
+  - namespace.yaml
+  - ../../base
+replicas:
+  - name: atlas-api
+    count: 3
+patches:
+  - path: hpa-patch.yaml
+images:
+  - name: ghcr.io/example/atlas-commerce-api
+    newName: ghcr.io/example/atlas-commerce-api
+    newTag: 0.1.0
